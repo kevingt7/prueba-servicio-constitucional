@@ -1,0 +1,22 @@
+{
+    "name": "Lista de Tareas",
+    "short_name": "Tareas",
+    "theme_color": "ffe08a",
+    "background_color": "ffe08a",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "./",
+    "start_url": "./to-do-list.html",
+    "icons": [
+        {
+            "src": "./imagenes/icono-512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        },
+        {
+            "src": "./imagenes/icon192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        }
+    ]
+}
