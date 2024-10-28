@@ -2,18 +2,25 @@
 <html lang="en">
 <head>
     <title>Lista de Tareas</title>
-    <link rel="stylesheet" href="style.css">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>  
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>  
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="manifest" href="../manifest.json">
+    <script type="application/javascript">
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("../assets/js/sw.js");
+        }
+      </script>
 </head>
 <body>
     <div class="container mt-5">
+        <button onclick="window.location.href='index.html'">Cerrar Sesión</button>
         <h1 class="text-center">Lista de Tareas</h1>
-        <form class="mb-4">
+        <form class="mb-4" action="api/api.php" method="post">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" id="taskInput" placeholder="Agregar tarea...">
+                <input type="text" class="form-control" id="taskInput" placeholder="Agregar tarea..." autofocus>
                 <div class="input-group-append">
                     <button type="submit" class="btn btn-primary" id="addButton">Agregar</button>
                 </div>
@@ -25,6 +32,6 @@
             </ul>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="../assets/js/script.js"></script>
 </body>
 </html>
