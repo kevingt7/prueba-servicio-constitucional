@@ -7,23 +7,17 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>  
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>  
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<<<<<<< HEAD:views/to-do-list.html
-    <link rel="manifest" href="../manifest.json">
-    <script type="application/javascript">
-        if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.register("../assets/js/sw.js");
-=======
+    <link rel="manifest" href="./manifest.json">  
     <link rel="manifest" href="./manifest.json">
     <script type="text/javascript">
         if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.register("sw.js");
->>>>>>> 292a4c059ac64851d72b66009d09dcaefe33d31c:to-do-list.html
+          navigator.serviceWorker.register("assets/js/sw.js");
         }
       </script>
 </head>
 <body>
     <div class="container mt-5">
-        <button onclick="window.location.href='index.html'">Cerrar Sesión</button>
+        <button onclick="window.location.href='index.html'">Cerrar Sesion</button>
         <h1 class="text-center">Lista de Tareas</h1>
         <form class="mb-4" action="api/api.php" method="post">
             <div class="input-group mb-3">
