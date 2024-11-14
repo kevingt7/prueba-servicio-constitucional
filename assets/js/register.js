@@ -1,26 +1,30 @@
-
-
 document.getElementById("registerForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Evita el envío del formulario por defecto
+    event.preventDefault();
 
-    // Obtiene los valores de los campos
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
 
-    // Envía los datos al servidor
+    if (email === "" || password === "") {
+        alert("Por favor, completa todos los campos.");
+        return;
+    }
+
     fetch("../api/register.php", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({ action: "register", email: email, password: password })
+        body: new URLSearchParams({ email: email, password: password })
     })
     .then(response => response.json())
     .then(data => {
-        alert(data.message); // Muestra el mensaje del servidor
+        console.log("Respuesta del servidor:", data);
+        alert(data.message);
 
         if (data.status === "success") {
-            // Si el registro fue exitoso, redirige o realiza otra acción
             window.location.href = "./login.html";
         }
     })
-    .catch(error => console.error("Error:", error));
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Error al registrar usuario. Por favor, intenta de nuevo.");
+    });
 });
